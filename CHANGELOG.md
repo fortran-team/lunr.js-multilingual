@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.3.5-multilingual-0.0.1
+
+* Creating multilingual lunr.js as fork of lunr.js 2.3.5
+
 ## 2.3.5
 
 * Fix bug [#375](https://github.com/olivernn/lunr.js/issues/375) with fuzzy matching that meant insertions at the end of a word would not match. Thanks [Luca Ongaro](https://github.com/lucaong) for reporting and to [Rob Hoelz](https://github.com/hoelzro) for providing a fix.
