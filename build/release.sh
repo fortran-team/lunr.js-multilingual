@@ -68,12 +68,14 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   echo -e "\033[0;32mReleasing...\033[0m"
   echo
-  git commit -a -m "Build version $version"
-  git tag -a v$version -m "Version $version"
-  git push origin master
-  git push --tags
 
   npm publish
+
+  git commit -a -m "Build version $version"
+  git push origin master
+
+  git tag -a v$version -m "Version $version"
+  git push --tags
 else
   echo -e "\033[0;31mCancelling...\033[0m"
 fi
