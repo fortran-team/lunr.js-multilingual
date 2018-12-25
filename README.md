@@ -1,3 +1,26 @@
+# Coding and building
+
+I write below how to code and build Lunr on Windows but you can do it everywhere,
+because instruction is universal, excepting hyperlinks on software.
+If you want to change Lunr code, you need:
+- Install [NodeJS](https://nodejs.org/dist/v10.14.2/node-v10.14.2-x86.msi)
+- Install [`make`](http://gnuwin32.sourceforge.net/downlinks/make.php)
+- Change you `PATH` environment variable to point on `make`
+- Change code you want in directory `<repo_dir>/lib`
+- Execute next commands:<br/>
+  `cd <repo_dir>`<br/>
+  `make clean`<br/>
+  `make release`<br/>
+  `make test`<br/>
+- If all are OK, then:
+    - change version in file `VERSION`
+    - edit `CHANGELOG.md` and write all that you did
+    - execute next commands:<br/>
+        `cd <repo_dir>`<br/>
+        `build/release.sh`<br/>
+    
+Get profit!!!
+
 # Lunr.js
 
 [![Join the chat at https://gitter.im/olivernn/lunr.js](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/olivernn/lunr.js?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
