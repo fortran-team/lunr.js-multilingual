@@ -1,0 +1,11 @@
+{
+  "name": "lunr-multilingual",
+  "version": "2.3.5-multilingual-0.0.1",
+  "main": "lunr.js-multilingual",
+  "ignore": [
+    "tests/",
+    "perf/",
+    "build/",
+    "docs/"
+  ]
+}

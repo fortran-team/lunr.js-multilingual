@@ -1,0 +1,9 @@
+{
+  "name": "lunr-multilingual",
+  "repo": "fortran-team/lunr.js-multilingual",
+  "version": "2.3.5-multilingual-0.0.1",
+  "description": "Simple full-text search in your browser with multilingual support",
+  "license": "MIT",
+  "main": "lunr.js-multilingual",
+  "scripts": ["lunr.js"]
+}
