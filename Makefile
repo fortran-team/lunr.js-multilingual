@@ -80,8 +80,9 @@ docs: $(SRC)
 clean:
 	rm -f $(CD)lunr{.min,}.js
 	rm -rf $(CD)docs
-	rm $(CD)*.json
-	rm $(CD)test/env/file_list.json
+	rm -f $(CD)*.json
+	rm -f $(CD)test/env/file_list.json
+	rm -f $(CD)*.tgz
 
 reset:
 	git checkout lunr.* *.json
