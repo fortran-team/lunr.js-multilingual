@@ -1,16 +1,16 @@
 {
-  "name": "lunr",
-  "description": "Simple full-text search in your browser.",
+  "name": "lunr-multilingual",
+  "description": "Simple full-text search in your browser with multilingual support",
   "version": "@VERSION",
-  "author": "Oliver Nightingale",
+  "author": "Professor Fortran",
   "keywords": ["search"],
-  "homepage": "http://lunrjs.com",
-  "bugs": "http://github.com/olivernn/lunr.js/issues",
-  "main": "lunr.js",
+  "homepage": "https://github.com/fortran-team/lunr.js-multilingual",
+  "bugs": "https://github.com/fortran-team/lunr.js-multilingual/issues",
+  "main": "lunr.js-multilingual",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/olivernn/lunr.js.git"
+    "url": "https://github.com/fortran-team/lunr.js-multilingual.git"
   },
   "devDependencies": {
     "benchmark": "2.1.x",

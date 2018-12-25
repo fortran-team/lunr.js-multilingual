@@ -1,7 +1,7 @@
 {
-  "name": "lunr.js",
+  "name": "lunr-multilingual",
   "version": "@VERSION",
-  "main": "lunr.js",
+  "main": "lunr.js-multilingual",
   "ignore": [
     "tests/",
     "perf/",
