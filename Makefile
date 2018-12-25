@@ -1,3 +1,4 @@
+CD := $(dir $(abspath Makefile))
 
 SRC = lib/lunr.js \
 	lib/utils.js \
@@ -24,31 +25,31 @@ SRC = lib/lunr.js \
 YEAR = $(shell date +%Y)
 VERSION = $(shell cat VERSION)
 
-NODE ?= $(shell which node)
-NPM ?= $(shell which npm)
-UGLIFYJS ?= ./node_modules/.bin/uglifyjs
-MOCHA ?= ./node_modules/.bin/mocha
-MUSTACHE ?= ./node_modules/.bin/mustache
-ESLINT ?= ./node_modules/.bin/eslint
-JSDOC ?= ./node_modules/.bin/jsdoc
-NODE_STATIC ?= ./node_modules/.bin/static
+NODE ?= node
+NPM ?= npm
+UGLIFYJS ?= $(CD)node_modules/.bin/uglifyjs
+MOCHA ?= $(CD)node_modules/.bin/mocha
+MUSTACHE ?= $(CD)node_modules/.bin/mustache
+ESLINT ?= $(CD)node_modules/.bin/eslint
+JSDOC ?= $(CD)node_modules/.bin/jsdoc
+NODE_STATIC ?= $(CD)node_modules/.bin/static
 
 all: test lint docs
 release: lunr.js lunr.min.js bower.json package.json component.json docs
 
 lunr.js: $(SRC)
-	cat build/wrapper_start $^ build/wrapper_end | \
+	cat $(CD)build/wrapper_start $^ $(CD)build/wrapper_end | \
 	sed "s/@YEAR/${YEAR}/" | \
 	sed "s/@VERSION/${VERSION}/" > $@
 
 lunr.min.js: lunr.js
 	${UGLIFYJS} --compress --mangle --comments < $< > $@
 
-%.json: build/%.json.template
+%.json: $(CD)build/%.json.template
 	cat $< | sed "s/@VERSION/${VERSION}/" > $@
 
 size: lunr.min.js
-	@gzip -c lunr.min.js | wc -c
+	@gzip -c $(CD)lunr.min.js | wc -c
 
 server: test/index.html
 	${NODE_STATIC} -a 0.0.0.0 -H '{"Cache-Control": "no-cache, must-revalidate"}'
@@ -57,29 +58,29 @@ lint: $(SRC)
 	${ESLINT} $^
 
 perf/*_perf.js:
-	${NODE} -r ./perf/perf_helper.js $@
+	${NODE} -r $(CD)perf/perf_helper.js $@
 
 benchmark: perf/*_perf.js
 
 test: node_modules lunr.js
-	${MOCHA} test/*.js -u tdd -r test/test_helper.js -R dot -C
+	${MOCHA} $(CD)test/*.js -u tdd -r $(CD)test/test_helper.js -R dot -C
 
 test/inspect: node_modules lunr.js
-	${MOCHA} test/*.js -u tdd -r test/test_helper.js -R dot -C --inspect-brk=0.0.0.0:9292
+	${MOCHA} $(CD)test/*.js -u tdd -r $(CD)test/test_helper.js -R dot -C --inspect-brk=0.0.0.0:9292
 
-test/env/file_list.json: $(wildcard test/*test.js)
+test/env/file_list.json: $(wildcard $(CD)test/*test.js)
 	${NODE} -p 'JSON.stringify({test_files: process.argv.slice(1)})' $^ > $@
 
-test/index.html: test/env/file_list.json test/env/index.mustache
+test/index.html: test/env/file_list.json $(CD)test/env/index.mustache
 	${MUSTACHE} $^ > $@
 
 docs: $(SRC)
-	${JSDOC} -R README.md -d docs -c build/jsdoc.conf.json $^
+	${JSDOC} -R $(CD)README.md -d $(CD)docs -c $(CD)build/jsdoc.conf.json $^
 
 clean:
-	rm -f lunr{.min,}.js
-	rm -rf docs
-	rm *.json
+	rm -f $(CD)lunr{.min,}.js
+	rm -rf $(CD)docs
+	rm $(CD)*.json
 
 reset:
 	git checkout lunr.* *.json
