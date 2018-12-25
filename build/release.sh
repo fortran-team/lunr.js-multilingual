@@ -43,6 +43,10 @@ if ! file_has_changed "CHANGELOG.md"; then
   exit 1
 fi
 
+make clean
+make release
+make test
+
 if ! file_has_changed "package.json"; then
   echo -e "\033[0;31mRefusing to release because package.json has not been updated.\033[0m"
   exit 1
@@ -69,7 +73,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   echo -e "\033[0;32mReleasing...\033[0m"
   echo
 
-  npm publish
+#  npm publish
 
   git commit -a -m "Build version $version"
   git push origin master

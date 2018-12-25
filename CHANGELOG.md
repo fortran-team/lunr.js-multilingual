@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.3.5-multilingual-0.0.2
+
+* Cyrillic testing and code correction
+
 ## 2.3.5-multilingual-0.0.1
 
 * Creating multilingual lunr.js as fork of lunr.js 2.3.5

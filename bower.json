@@ -1,6 +1,6 @@
 {
   "name": "lunr-multilingual",
-  "version": "2.3.5-multilingual-0.0.1",
+  "version": "2.3.5-multilingual-0.0.2",
   "main": "lunr.js-multilingual",
   "ignore": [
     "tests/",

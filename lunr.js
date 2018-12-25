@@ -1,5 +1,5 @@
 /**
- * lunr - http://lunrjs.com - A bit like Solr, but much smaller and not as bright - 2.3.5-multilingual-0.0.1
+ * lunr - http://lunrjs.com - A bit like Solr, but much smaller and not as bright - 2.3.5-multilingual-0.0.2
  * Copyright (C) 2018 Oliver Nightingale
  * @license MIT
  */
@@ -54,7 +54,7 @@ var lunr = function (config) {
   return builder.build()
 }
 
-lunr.version = "2.3.5-multilingual-0.0.1"
+lunr.version = "2.3.5-multilingual-0.0.2"
 /*!
  * lunr.utils
  * Copyright (C) 2018 Oliver Nightingale
@@ -1354,9 +1354,9 @@ lunr.Pipeline.registerFunction(lunr.stopWordFilter, 'stopWordFilter')
  */
 lunr.trimmer = function (token) {
   return token.update(function (s) {
-    const nonAlphaNumericUnderscoreBMP = "[^\\w\\u0000-\\uFFFF]"
-    return s.replace(new RegExp("^" + nonAlphaNumericUnderscoreBMP + "+"), '')
-            .replace(new RegExp(nonAlphaNumericUnderscoreBMP + "+$"), '')
+    const nonAlphaNumericUnderscoreCyrillic = "[^\\wа-яА-ЯёЁ]"
+    return s.replace(new RegExp("^" + nonAlphaNumericUnderscoreCyrillic + "+"), '')
+            .replace(new RegExp(nonAlphaNumericUnderscoreCyrillic + "+$"), '')
   })
 }
 
