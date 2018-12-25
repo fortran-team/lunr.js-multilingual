@@ -81,6 +81,7 @@ clean:
 	rm -f $(CD)lunr{.min,}.js
 	rm -rf $(CD)docs
 	rm $(CD)*.json
+	rm $(CD)test/env/file_list.json
 
 reset:
 	git checkout lunr.* *.json
