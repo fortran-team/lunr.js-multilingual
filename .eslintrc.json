@@ -1,7 +1,8 @@
 {
   "env": {
     "browser": true,
-    "node": true
+    "node": true,
+    "es6": true
   },
 
   "globals": {
@@ -74,7 +75,7 @@
 
     "key-spacing": "error",
     "keyword-spacing": "error",
-    "linebreak-style": "error",
+//    "linebreak-style": "error",
     "new-cap": "error",
     "no-trailing-spaces": "error",
     "no-whitespace-before-property": "error",
