@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.3.5-multilingual-0.0.3
+
+* Editing bower.json.template and README.md to add bower info
+
 ## 2.3.5-multilingual-0.0.2
 
 * Cyrillic testing and code correction

@@ -1,9 +1,11 @@
 {
   "name": "lunr-multilingual",
   "description": "Simple full-text search in your browser with multilingual support",
-  "version": "2.3.5-multilingual-0.0.2",
+  "version": "2.3.5-multilingual-0.0.3",
   "author": "Professor Fortran",
-  "keywords": ["search"],
+  "keywords": [
+    "search"
+  ],
   "homepage": "https://github.com/fortran-team/lunr.js-multilingual",
   "bugs": "https://github.com/fortran-team/lunr.js-multilingual/issues",
   "main": "lunr.js-multilingual",

@@ -3,9 +3,9 @@
   "version": "@VERSION",
   "main": "lunr.js-multilingual",
   "ignore": [
-    "tests/",
-    "perf/",
     "build/",
-    "docs/"
+    "docs/",
+    "perf/",
+    "test/"
   ]
 }

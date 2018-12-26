@@ -1,3 +1,14 @@
+# Bower
+
+This repo was registered in bower by command:<br/>
+`bower register lunr.js-multilingual https://github.com/fortran-team/lunr.js-multilingual`<br/>
+Now you can use this project by adding to your project's `bower.json` file such dependency:<br/>
+`{`<br/>
+&nbsp;&nbsp;`"dependencies": {`<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;`"lunr.js-multilingual": "2.3.5-multilingual-X.X.X",`<br/>
+&nbsp;&nbsp;`}`<br/>
+`}`
+
 # Coding and building
 
 I write below how to code and build Lunr on Windows but you can do it everywhere,

@@ -1,5 +1,5 @@
 /**
- * lunr - http://lunrjs.com - A bit like Solr, but much smaller and not as bright - 2.3.5-multilingual-0.0.2
+ * lunr - http://lunrjs.com - A bit like Solr, but much smaller and not as bright - 2.3.5-multilingual-0.0.3
  * Copyright (C) 2018 Oliver Nightingale
  * @license MIT
  */
@@ -54,7 +54,7 @@ var lunr = function (config) {
   return builder.build()
 }
 
-lunr.version = "2.3.5-multilingual-0.0.2"
+lunr.version = "2.3.5-multilingual-0.0.3"
 /*!
  * lunr.utils
  * Copyright (C) 2018 Oliver Nightingale
